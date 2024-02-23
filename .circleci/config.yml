@@ -8,7 +8,7 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
-      - run: cd C:\Cours\Session 06\IntégrationWeb\Laboratoire02\Projet_Localhost\3w5-h24-tp2-backend
+      - run: cd \Projet_Localhost\3w5-h24-tp2-backend
       - run: npm install
       - run: npm test
 
