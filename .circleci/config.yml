@@ -58,7 +58,6 @@ jobs:
       - attach_workspace:
           at: .
       - run: cd .
-      - run: cd backend
       - run: ls -Rl
 workflows:
   monWorkflow:
