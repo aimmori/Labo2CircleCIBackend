@@ -41,7 +41,7 @@ jobs:
               npm run build 
       - run: 
             name: Créer dossier public
-            command: mkdir -p frontend/public 
+            command: mkdir -p backend/public 
       - run: 
             name: Copier le build dans public
             command: cp -r frontend/build/ backend/public/
