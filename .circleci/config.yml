@@ -8,15 +8,13 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
-      - run: cd Projet_Localhost\3w5-h24-tp2-backend
       - run: npm install 
       - run: npm test
 
   integrationFrontend:
     machine: true
     steps:
-      - run: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git frontend
-      - run: cd frontend
+      - run: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git
       - run: npm install 
       - run: npm run build 
       - run: mkdir -p ../3w5-h24-tp2-backend/public 
