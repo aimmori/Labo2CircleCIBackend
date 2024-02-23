@@ -20,7 +20,7 @@ jobs:
           name: Run tests
           command: |
             cd backend
-            npm run test
+            sudo npm run test
 
 
   integrationFrontend:
