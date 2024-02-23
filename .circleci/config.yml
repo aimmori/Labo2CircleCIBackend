@@ -8,7 +8,7 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git backend
-      - run: cd backend
+      - run: cd backend/3w5-h24-tp2-backend
       - run: npm install 
       - run: npm test
 
