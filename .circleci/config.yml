@@ -8,9 +8,8 @@ jobs:
     machine: true
     steps:
       - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
-      - run: cd Labo2CircleCIBackend
-      - run: npm install
-      - run: npm test
+      - run: cd Labo2CircleCIBackend && npm install && npm test
+
 
   integrationFrontend:
     machine: true
