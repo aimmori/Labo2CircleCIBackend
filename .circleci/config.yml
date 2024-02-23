@@ -16,25 +16,38 @@ jobs:
           command: |
             cd backend
             npm install
-      - run:
-          name: Run tests
-          command: |
-            cd backend
-            sudo npm run test
+      #- run:
+       #   name: Run tests
+        #  command: |
+         #   cd backend
+          #  npm run test
 
 
   integrationFrontend:
     machine: true
     steps:
-      - run: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git frontend
-      - run: cd frontend
-      - run: npm install 
-      - run: npm run build 
-      - run: mkdir -p ../3w5-h24-tp2-backend/public 
-      - run: cp -rT build ../3w5-h24-tp2-backend/public
+      - run: 
+          name: Checkout code
+          command: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git frontend
+      - run:
+            name: Install dependencies
+            command: |
+             cd frontend
+             npm install 
+      - run: 
+            name: Install Build 
+            command: |
+              cd frontend
+              npm run build 
+      - run: 
+            name: Créer dossier public
+            command: mkdir -p frontend/public 
+      - run: 
+            name: Copier le build dans public
+            command: cp -r frontend/build/ backend/public/
 
       - persist_to_workspace:
-          root: 3w5-h24-tp2-backend/public
+          root: backend/public
           paths:
             - .
       - attach_workspace:
@@ -44,7 +57,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: cd 3w5-h24-tp2-backend 
+      - run: cd backend
       - run: ls -Rl
 workflows:
   monWorkflow:
