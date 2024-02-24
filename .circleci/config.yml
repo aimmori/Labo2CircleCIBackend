@@ -5,8 +5,8 @@ orbs:
 
 jobs:
   checkoutEtTests:
-    executor:
-      name: node/default
+    docker:
+      - image: cimg/node:17.4.0
     steps:
       - run:
           name: Checkout code
@@ -24,7 +24,8 @@ jobs:
 
 
   integrationFrontend:
-    machine: true
+    docker:
+      - image: cimg/node:17.4.0
     steps:
       - run: 
           name: Checkout code
@@ -53,7 +54,8 @@ jobs:
       - attach_workspace:
           at: .
   deploiement:
-    machine: true
+    docker:
+      - image: cimg/node:17.4.0
     steps:
       - attach_workspace:
           at: .
