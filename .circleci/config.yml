@@ -18,9 +18,7 @@ jobs:
             npm install
       - run:
           name: Run tests
-          command: |
-            cd Labo2CircleCIBackend
-            npm run test
+          command: npm run test
 
 
   integrationFrontend:
