@@ -10,17 +10,17 @@ jobs:
     steps:
       - run:
           name: Checkout code
-          command: git clone https://github.com/aimmori/Labo2CircleCIBackend.git backend
+          command: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
       - run:
           name: Install dependencies
           command: |
-            cd backend
+            cd Labo2CircleCIBackend
             npm install
-      #- run:
-       #   name: Run tests
-        #  command: |
-         #   cd backend
-          #  npm run test
+      - run:
+          name: Run tests
+          command: |
+            cd Labo2CircleCIBackend
+            npm run test
 
 
   integrationFrontend:
@@ -28,26 +28,26 @@ jobs:
     steps:
       - run: 
           name: Checkout code
-          command: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git frontend
+          command: git clone https://github.com/aimmori/Labo2CircleCiFrontend.git 
       - run:
             name: Install dependencies
             command: |
-             cd frontend
+             cd Labo2CircleCiFrontend
              npm install 
       - run: 
             name: Install Build 
             command: |
-              cd frontend
+              cd Labo2CircleCiFrontend
               npm run build 
       - run: 
             name: Créer dossier public
-            command: mkdir -p backend/public 
+            command: mkdir -p Labo2CircleCIBackend/public 
       - run: 
             name: Copier le build dans public
-            command: cp -r frontend/build/ backend/public/
+            command: cp -r Labo2CircleCiFrontend/build/ Labo2CircleCIBackend/public/
 
       - persist_to_workspace:
-          root: backend/public
+          root: Labo2CircleCIBackend/public
           paths:
             - .
       - attach_workspace:
