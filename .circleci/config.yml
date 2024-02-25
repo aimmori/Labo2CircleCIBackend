@@ -10,7 +10,8 @@ jobs:
     steps:
       - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
       - run: cd Labo2CircleCIBackend && npm install
-      #- run: cd Labo2CircleCIBackend && npm run test
+      - run: chmod +x node_modules/.bin/jest
+      - run: cd Labo2CircleCIBackend && jest
 
 
   integrationFrontend:
