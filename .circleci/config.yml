@@ -8,17 +8,9 @@ jobs:
     docker:
       - image: cimg/node:17.4.0
     steps:
-      - run:
-          name: Checkout code
-          command: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
-      - run:
-          name: Install dependencies
-          command: |
-            cd Labo2CircleCIBackend
-            npm install
-      - run:
-          name: Run tests
-          command: npm run test
+      - run: git clone https://github.com/aimmori/Labo2CircleCIBackend.git 
+      - run: cd Labo2CircleCIBackend && npm install
+      - run: cd Labo2CircleCIBackend && npm run test
 
 
   integrationFrontend:
